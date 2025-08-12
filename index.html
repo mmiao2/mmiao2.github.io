@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Miranda Miao</title>
-  <meta name="description" content="Miranda Miao — master's student at UPenn researching LLMs, truthfulness, calibration, and retrieval." />
+  <meta name="description" content="CS Master's student at the University of Pennsylvania — research on truthfulness, calibration, and retrieval in LLMs." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E✦%3C/text%3E%3C/svg%3E" />
   <style>
     /*
@@ -27,7 +27,7 @@
 
       --radius: 12px;
       --content-w: 720px;
-      --lh: 1.65;
+      --lh: 1.65; --avatar: 154px;
     }
 
     /* keep the same palette for dark mode to avoid black backgrounds */
@@ -103,8 +103,9 @@
     section { padding: 18px 0 6px; }
 
     /* About layout */
-    .about-wrap { display: grid; grid-template-columns: 128px 1fr; gap: 18px; align-items: start; }
-    .avatar { width: 128px; height: 128px; object-fit: cover; border-radius: 16px; border: 1px solid var(--ui); background: #fff; }
+    .about-wrap { display: grid; grid-template-columns: var(--avatar) 1fr; gap: 18px; align-items: start; }
+    .avatar { width: var(--avatar); height: var(--avatar); object-fit: cover; border-radius: 16px; border: 1px solid var(--ui); background: #fff; }
+    .about-wrap p:first-child { margin-top: 0; } /* align top of text with image */
 
     /* Footer */
     footer { border-top: 1px solid var(--ui); margin-top: 40px; }
@@ -116,8 +117,8 @@
       nav a { margin: 0; }
       .hdr { padding: 10px 14px; }
       .container { padding: 20px 14px 56px; }
-      .about-wrap { grid-template-columns: 88px 1fr; }
-      .avatar { width: 88px; height: 88px; border-radius: 12px; }
+      .about-wrap { grid-template-columns: 106px 1fr; }
+      .avatar { width: 106px; height: 106px; border-radius: 12px; }
     }
   </style>
 </head>
@@ -130,8 +131,9 @@
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#research">Research</a>
-        <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a>
-        <a id="resume-link" href="https://drive.google.com/file/d/1iIVfBrtlLdI-Wahvdc31STjU9P_6cS5j/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
+        $1
+        <a href="https://scholar.google.com/citations?user=QO6LJz0AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        $2
         <button class="theme-toggle" id="themeBtn" type="button" aria-label="Toggle theme">Theme</button>
       </nav>
     </div>
@@ -144,7 +146,7 @@
       <div class="about-wrap">
         <img class="avatar" src="profile.png" alt="Portrait of Miranda Miao" />
         <div>
-          <p class="muted">Miranda Miao – Master's student at UPenn and graduate from Wellesley College researching LLMs, papers, and more.</p>
+          <p class="muted">CS Master's student at the University of Pennsylvania</p>
           <p>I'm <strong>Miranda Muqing Miao</strong>, a master's student in Computer &amp; Information Science at the University of Pennsylvania. I study large language models with a focus on <em>truthfulness</em>, <em>calibration</em>, and <em>retrieval</em>. I'm part of the Kearns–Roth Research Group and the Penn NLP Lab at the University of Pennsylvania.</p>
         </div>
       </div>
@@ -175,7 +177,7 @@
     <!-- Contact / Links -->
     <section id="links" aria-labelledby="links-h">
       <h2 id="links-h">Links</h2>
-      <p>Connect with me on <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a>. I’ll add my resume link here shortly.</p>
+      <p>Connect with me on <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://scholar.google.com/citations?user=QO6LJz0AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>. View my <a href="https://drive.google.com/file/d/1iIVfBrtlLdI-Wahvdc31STjU9P_6cS5j/view?usp=sharing" target="_blank" rel="noopener">resume</a>.</p>
     </section>
   </main>
 
