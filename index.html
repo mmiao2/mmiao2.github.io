@@ -27,34 +27,7 @@
 
       --radius: 12px;
       --content-w: 720px;
-      --lh: 1.65; --avatar: 154px;
-    }
-
-    /* keep the same palette for dark mode to avoid black backgrounds */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --paper: #EAF7EA;
-        --bg-2: #E2F1E2;
-        --ui:   #D3E5D3;
-        --ui-2: #C4D9C4;
-        --ui-3: #B6CEB6;
-
-        --tx:   #1F1F1F;
-        --tx-2: #404040;
-        --tx-3: #6B6B6B;
-
-        --forest: #083524;
-      }
-    }
-
-    /* explicit theme classes (both stay light-green) */
-    html.theme-light {
-      --paper: #F4FBF4; --bg-2:#ECF6EC; --ui:#DDEBDD; --ui-2:#CEDFCC; --ui-3:#BFD3BB;
-      --tx:#2B2B2B; --tx-2:#555555; --tx-3:#888888; --forest:#0B3D2E;
-    }
-    html.theme-dark {
-      --paper:#EAF7EA; --bg-2:#E2F1E2; --ui:#D3E5D3; --ui-2:#C4D9C4; --ui-3:#B6CEB6;
-      --tx:#1F1F1F; --tx-2:#404040; --tx-3:#6B6B6B; --forest:#083524;
+      --lh: 1.65; --avatar: 170px;
     }
 
     /* Base */
@@ -81,8 +54,8 @@
     nav a { margin-left: 16px; font-weight: 600; color: var(--tx); }
     nav a:hover { color: var(--forest); text-decoration: none; }
 
-    .theme-toggle { border: 1px solid var(--ui); background: var(--bg-2); color: var(--tx-2); padding: 6px 10px; border-radius: var(--radius); font-size: 12px; cursor: pointer; }
-    .theme-toggle:hover { background: var(--ui-2); color: var(--tx); }
+    
+    
 
     /* Typography */
     h1 { color: var(--forest); font-size: clamp(28px, 4vw, 36px); line-height: 1.2; margin: 36px 0 8px; }
@@ -103,7 +76,7 @@
     section { padding: 18px 0 6px; }
 
     /* About layout */
-    .about-wrap { display: grid; grid-template-columns: var(--avatar) 1fr; gap: 18px; align-items: start; }
+    .about-wrap { display: grid; grid-template-columns: var(--avatar) 1fr; gap: 18px; align-items: center; }
     .avatar { width: var(--avatar); height: var(--avatar); object-fit: cover; border-radius: 16px; border: 1px solid var(--ui); background: #fff; }
     .about-wrap p:first-child { margin-top: 0; } /* align top of text with image */
 
@@ -117,8 +90,8 @@
       nav a { margin: 0; }
       .hdr { padding: 10px 14px; }
       .container { padding: 20px 14px 56px; }
-      .about-wrap { grid-template-columns: 106px 1fr; }
-      .avatar { width: 106px; height: 106px; border-radius: 12px; }
+      .about-wrap { grid-template-columns: 117px 1fr; }
+      .avatar { width: 117px; height: 117px; border-radius: 12px; }
     }
   </style>
 </head>
@@ -131,10 +104,9 @@
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#research">Research</a>
-        $1
+        <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=QO6LJz0AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        $2
-        <button class="theme-toggle" id="themeBtn" type="button" aria-label="Toggle theme">Theme</button>
+        <a id="resume-link" href="https://drive.google.com/file/d/1iIVfBrtlLdI-Wahvdc31STjU9P_6cS5j/view?usp=sharing" target="_blank" rel="noopener">Resume</a>
       </nav>
     </div>
   </header>
@@ -189,37 +161,8 @@
   </footer>
 
   <script>
-    // year
+    // Update copyright year only (single light theme)
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // theme toggle with preference persistence; keyboard shortcut: press "d"
-    const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light') root.classList.add('theme-light');
-    if (saved === 'dark')  root.classList.add('theme-dark');
-
-    function setTheme(next) {
-      root.classList.remove('theme-light', 'theme-dark');
-      if (next) root.classList.add(next);
-      localStorage.setItem('theme', next || '');
-    }
-
-    function toggleTheme() {
-      const isDark = root.classList.contains('theme-dark') || (!root.classList.contains('theme-light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-      setTheme(isDark ? 'theme-light' : 'theme-dark');
-    }
-
-    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
-    window.addEventListener('keydown', (e) => { if (e.key.toLowerCase() === 'd') toggleTheme(); });
-
-    // resume placeholder helper
-    const resumeLink = document.getElementById('resume-link');
-    resumeLink.addEventListener('click', (e) => {
-      if (resumeLink.getAttribute('href') === '#') {
-        e.preventDefault();
-        alert('Send me your resume URL and I will wire it up.');
-      }
-    });
   </script>
 </body>
 </html>
