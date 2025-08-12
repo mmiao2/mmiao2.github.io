@@ -1,202 +1,214 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Miranda Miao</title>
-  <meta name="description" content="Miranda Miao — UPenn CIS. Research on LLMs, RAG, hallucination, calibration." />
+  <meta name="description" content="Miranda Miao — master's student at UPenn researching LLMs, truthfulness, calibration, and retrieval." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E✦%3C/text%3E%3C/svg%3E" />
   <style>
-    /* === calv.info-inspired: simple, fast, typographic-first === */
+    /*
+      Miranda Miao — Single-file site inspired by calv.info
+      Color palette: Flexoki (MIT) by Steph Ango — https://stephango.com/flexoki
+      This file is self-contained for easy deploy (no build step).
+    */
+
     :root {
-      --maxw: 720px;
+      /* Flexoki — light theme */
+      --paper: #FFFCF0; /* bg */
+      --bg-2: #F2F0E5;
+      --ui:    #E6E4D9; /* borders */
+      --ui-2:  #DAD8CE; /* hover borders */
+      --ui-3:  #CECDC3; /* active borders */
+      --tx:    #100F0F; /* primary text (near-black) */
+      --tx-2:  #6F6E69; /* muted */
+      --tx-3:  #B7B5AC; /* faint */
+      --link:  #24837B; /* cyan-600 */
+      --link-visited: #205EA6; /* blue-600 */
+      --accent: #AF3029; /* red-600 — used for small accents */
+
+      --radius: 12px;
+      --content-w: 720px;
+      --lh: 1.65;
     }
+
+    /* Auto-dark mode defaults using Flexoki mapping */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #100F0F; /* bg */
+        --bg-2: #1C1B1A;
+        --ui:   #282726;
+        --ui-2: #343331;
+        --ui-3: #403E3C;
+        --tx:   #CECDC3; /* primary text */
+        --tx-2: #9F9D96;
+        --tx-3: #6F6E69;
+        --link: #3AA99F; /* cyan-400 */
+        --link-visited: #4385BE; /* blue-400 */
+        --accent: #D14D41; /* red-400 */
+      }
+    }
+
+    /* Explicit theme overrides via .theme-light / .theme-dark on <html> */
+    html.theme-light {
+      --paper: #FFFCF0; --bg-2:#F2F0E5; --ui:#E6E4D9; --ui-2:#DAD8CE; --ui-3:#CECDC3;
+      --tx:#100F0F; --tx-2:#6F6E69; --tx-3:#B7B5AC; --link:#24837B; --link-visited:#205EA6; --accent:#AF3029;
+    }
+    html.theme-dark {
+      --paper:#100F0F; --bg-2:#1C1B1A; --ui:#282726; --ui-2:#343331; --ui-3:#403E3C;
+      --tx:#CECDC3; --tx-2:#9F9D96; --tx-3:#6F6E69; --link:#3AA99F; --link-visited:#4385BE; --accent:#D14D41;
+    }
+
+    /* Base */
     html, body { height: 100%; }
     body {
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem 1rem;
-      max-width: var(--maxw);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      line-height: 1.65;
-      color: #111;
-      background: #fff;
+      margin: 0;
+      background: var(--paper);
+      color: var(--tx);
+      font: 16px/var(--lh) ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    h1 {
-      font-size: 1.8rem;
-      margin: 0 0 .5rem 0;
-      font-weight: 700;
-    }
-    h1 a { color: inherit; text-decoration: none; }
-    h2 { font-size: 1.25rem; margin: 2.5rem 0 1rem; }
-    h3 { font-size: 1.05rem; margin: 1.5rem 0 .25rem; }
-    p  { margin: .75rem 0; }
-    small, .meta { color: #666; }
 
-    nav.top, nav.bottom {
-      display: block;
-      margin: .25rem 0 1.25rem 0;
-      font-size: .95rem;
-    }
-    nav a { margin-right: 1rem; }
+    a { color: var(--link); text-decoration: none; }
+    a:visited { color: var(--link-visited); }
+    a:hover { text-decoration: underline; }
 
-    hr { border: 0; border-top: 1px solid #eee; margin: 2rem 0; }
-    .spacer { height: 1rem; }
+    .container { max-width: var(--content-w); margin: 0 auto; padding: 24px 20px 64px; }
 
-    /* research list */
-    .paper { margin: 1.25rem 0 1.5rem; }
-    .paper .abstract { white-space: pre-wrap; }
-    .muted { color: #777; }
-    .loading { opacity: .7; font-style: italic; }
+    /* Header */
+    header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in srgb, var(--paper) 88%, transparent); border-bottom: 1px solid var(--ui); }
+    .hdr { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: var(--content-w); margin: 0 auto; padding: 12px 20px; }
+    .brand { font-weight: 700; letter-spacing: 0.2px; }
+    nav a { margin-left: 16px; font-weight: 600; color: var(--tx); }
+    nav a:hover { color: var(--link); text-decoration: none; }
 
-    /* mobile rhythm tweaks */
-    @media (max-width: 420px) {
-      body { padding-top: 1.25rem; }
-      nav.top { margin-bottom: .75rem; }
+    .theme-toggle { border: 1px solid var(--ui); background: var(--bg-2); color: var(--tx-2); padding: 6px 10px; border-radius: var(--radius); font-size: 12px; cursor: pointer; }
+    .theme-toggle:hover { background: var(--ui-2); color: var(--tx); }
+
+    /* Typography */
+    h1 { font-size: clamp(28px, 4vw, 36px); line-height: 1.2; margin: 36px 0 8px; }
+    h2 { font-size: clamp(20px, 3vw, 24px); line-height: 1.25; margin: 28px 0 8px; }
+    h3 { font-size: 18px; margin: 20px 0 6px; }
+    p { margin: 10px 0 16px; }
+    .muted { color: var(--tx-2); }
+    .fine { color: var(--tx-3); font-size: 13px; }
+    .hr { height: 1px; background: var(--ui); margin: 24px 0; }
+
+    /* Cards / lists */
+    .list { display: grid; gap: 18px; }
+    .item { padding: 14px 16px; border: 1px solid var(--ui); border-radius: var(--radius); background: var(--bg-2); }
+    .item:hover { border-color: var(--ui-2); }
+
+    /* Section spacing */
+    section { padding: 18px 0 6px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--ui); margin-top: 40px; }
+    .foot { max-width: var(--content-w); margin: 0 auto; padding: 20px; font-size: 13px; color: var(--tx-2); display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+
+    /* Small screens */
+    @media (max-width: 520px) {
+      nav { display: flex; gap: 10px; }
+      nav a { margin: 0; }
+      .hdr { padding: 10px 14px; }
+      .container { padding: 20px 14px 56px; }
     }
   </style>
 </head>
 <body>
-  <!-- Site title -->
+  <a href="#main" class="fine" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
   <header>
-    <h1><a href="#about">Miranda Miao</a></h1>
-    <nav class="top" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#linkedin">LinkedIn</a>
-    </nav>
+    <div class="hdr">
+      <div class="brand"><a href="#about" aria-label="Home">Miranda Miao</a></div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="resume-link" href="#" title="Resume coming soon">Resume</a>
+        <button class="theme-toggle" id="themeBtn" type="button" aria-label="Toggle theme">Theme</button>
+      </nav>
+    </div>
   </header>
 
-  <!-- About -->
-  <section id="about" aria-labelledby="about-h">
-    <h2 id="about-h">About</h2>
-    <p>I'm Miranda Muqing Miao, a master's student in Computer & Information Science at the University of Pennsylvania. I study large language models with a focus on truthfulness, calibration, and retrieval.</p>
-    <p> I'm honored to be a part of the Kearns–Roth Research Group and the Penn NLP Lab.</p>
-    <p>Reach me at <a href="mailto:miaom@seas.upenn.edu">miaom@seas.upenn.edu</a>.</p>
-  </section>
+  <main id="main" class="container">
+    <!-- About -->
+    <section id="about" aria-labelledby="about-h">
+      <h1 id="about-h">About</h1>
+      <p class="muted">Miranda Miao – Master's student at UPenn and graduate from Wellesley College researching LLMs, papers, and more.</p>
+      <p>I'm <strong>Miranda Muqing Miao</strong>, a master's student in Computer &amp; Information Science at the University of Pennsylvania. I study large language models with a focus on <em>truthfulness</em>, <em>calibration</em>, and <em>retrieval</em>. I'm part of the Kearns–Roth Research Group and the Penn NLP Lab at the University of Pennsylvania.</p>
+      <div class="hr" role="presentation"></div>
+    </section>
 
-  <!-- Research -->
-  <section id="research" aria-labelledby="research-h">
-    <h2 id="research-h">Research</h2>
-    <div id="papers"></div>
-  </section>
+    <!-- Research -->
+    <section id="research" aria-labelledby="research-h">
+      <h2 id="research-h">Research</h2>
+      <div class="list" role="list">
+        <article class="item" role="listitem">
+          <h3><a href="https://arxiv.org/abs/2507.15849" target="_blank" rel="noopener">The Impact of Language Mixing on Bilingual LLM Reasoning</a></h3>
+          <p class="muted">Yihao Li, Jiayi Xin, <strong>Miranda Muqing Miao</strong>, Qi Long, Lyle Ungar · arXiv, 2025</p>
+        </article>
+        <article class="item" role="listitem">
+          <h3><a href="https://arxiv.org/abs/2502.08666" target="_blank" rel="noopener">Hallucination, Monofacts, and Miscalibration: An Empirical Investigation</a></h3>
+          <p class="muted"><strong>Miranda Muqing Miao</strong>, Michael Kearns · arXiv, 2025</p>
+        </article>
+        <article class="item" role="listitem">
+          <h3><a href="https://arxiv.org/abs/2410.01171" target="_blank" rel="noopener">Multilingual Retrieval Augmented Generation for Culturally-Sensitive Tasks: A Benchmark for Cross-lingual Robustness</a></h3>
+          <p class="muted">Bryan Li, Fiona Luo, Samar Haider, Adwait Agashe, Tammy Li, Runqi Liu, <strong>Muqing Miao</strong>, Shriya Ramakrishnan, Yuan Yuan, Chris Callison-Burch · arXiv, 2024–2025</p>
+        </article>
+      </div>
+      <p class="fine">More coming soon.</p>
+      <div class="hr" role="presentation"></div>
+    </section>
 
-  <!-- LinkedIn -->
-  <section id="linkedin" aria-labelledby="linkedin-h">
-    <h2 id="linkedin-h">LinkedIn</h2>
-    <p>Find me on <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a>.</p>
-  </section>
+    <!-- Contact / Links -->
+    <section id="links" aria-labelledby="links-h">
+      <h2 id="links-h">Links</h2>
+      <p>Connect with me on <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" rel="noopener">LinkedIn</a>. I’ll add my resume link here shortly.</p>
+    </section>
+  </main>
 
-  <div class="spacer"></div>
-  <hr />
-
-  <!-- Bottom nav (like calv.info) -->
-  <nav class="bottom" aria-label="Footer">
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#linkedin">LinkedIn</a>
-  </nav>
+  <footer>
+    <div class="foot">
+      <div>© <span id="year"></span> Miranda Miao</div>
+      <div class="fine">Colors: Flexoki (MIT). Built with plain HTML/CSS/JS.</div>
+    </div>
+  </footer>
 
   <script>
-    // --- Auto-abstracts from arXiv (client-side) ---
-    // Note: arXiv's Atom API generally supports browser requests. If CORS blocks in your host,
-    // the entries will gracefully show their link with a "View on arXiv" note.
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    /**
-     * Define your papers here. For arXiv items, include `arxivId` and we'll fetch title+abstract.
-     * For non-arXiv (e.g., Google Scholar), set a manual title and (optional) abstract.
-     * You can always add more items to this list.
-     */
-    const PAPERS = [
-      {
-        key: '2410.01171',
-        arxivId: '2410.01171',
-        year: 2024,
-        title: 'Multilingual Retrieval Augmented Generation for Culturally-Sensitive Tasks',
-        url: 'https://arxiv.org/abs/2410.01171'
-      },
-      {
-        key: '2502.08666',
-        arxivId: '2502.08666',
-        year: 2025,
-        title: 'Hallucination, Monofacts, and Miscalibration: An Empirical Investigation',
-        url: 'https://arxiv.org/abs/2502.08666'
-      },
-      {
-        // Google Scholar blocks cross-origin programmatic access; leave manual for now.
-        key: 'scholar-1',
-        year: '—',
-        title: 'Selected paper (see Google Scholar)',
-        url: 'https://scholar.google.com/citations?view_op=view_citation&hl=en&user=QO6LJz0AAAAJ&citation_for_view=QO6LJz0AAAAJ:UeHWp8X0CEIC',
-        abstract: 'Open the Google Scholar link to view the latest details and abstract.'
+    // theme toggle with preference persistence; keyboard shortcut: press "d"
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') root.classList.add('theme-light');
+    if (saved === 'dark')  root.classList.add('theme-dark');
+
+    function setTheme(next) {
+      root.classList.remove('theme-light', 'theme-dark');
+      if (next) root.classList.add(next);
+      localStorage.setItem('theme', next || '');
+    }
+
+    function toggleTheme() {
+      const isDark = root.classList.contains('theme-dark') || (!root.classList.contains('theme-light') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      setTheme(isDark ? 'theme-light' : 'theme-dark');
+    }
+
+    document.getElementById('themeBtn').addEventListener('click', toggleTheme);
+    window.addEventListener('keydown', (e) => { if (e.key.toLowerCase() === 'd') toggleTheme(); });
+
+    // resume placeholder helper
+    const resumeLink = document.getElementById('resume-link');
+    resumeLink.addEventListener('click', (e) => {
+      if (resumeLink.getAttribute('href') === '#') {
+        e.preventDefault();
+        alert('Send me your resume URL and I will wire it up.');
       }
-    ];
-
-    const papersEl = document.getElementById('papers');
-
-    // Render skeletons first for instant paint
-    for (const p of PAPERS) {
-      const el = document.createElement('article');
-      el.className = 'paper';
-      el.id = 'paper-' + p.key;
-      el.innerHTML = `
-        <h3><a href="${p.url}" target="_blank" rel="noopener">${p.title}</a></h3>
-        <div class="meta">${p.year || ''}</div>
-        <p class="abstract ${p.arxivId ? 'loading' : ''}">${p.arxivId ? 'Loading abstract…' : (p.abstract || '')}</p>
-      `;
-      papersEl.appendChild(el);
-    }
-
-    // Fetch arXiv abstracts in a single request when possible
-    const arxivIds = PAPERS.filter(p => p.arxivId).map(p => p.arxivId).join(',');
-    if (arxivIds) {
-      const url = 'https://export.arxiv.org/api/query?id_list=' + encodeURIComponent(arxivIds);
-      fetch(url)
-        .then(r => r.text())
-        .then(xml => {
-          const doc = new window.DOMParser().parseFromString(xml, 'text/xml');
-          const entries = [...doc.getElementsByTagName('entry')];
-          entries.forEach(entry => {
-            const idEl = entry.getElementsByTagName('id')[0];
-            const titleEl = entry.getElementsByTagName('title')[0];
-            const summaryEl = entry.getElementsByTagName('summary')[0];
-            if (!idEl || !summaryEl) return;
-            const idText = idEl.textContent;
-            // arXiv id may include version (e.g., 2410.01171v2). Extract the base numeric id.
-            const match = idText.match(/\/(\d{4}\.\d{5})(v\d+)?$/);
-            const baseId = match ? match[1] : null;
-            if (!baseId) return;
-            // Find the corresponding paper card
-            const paper = PAPERS.find(p => p.arxivId === baseId);
-            if (!paper) return;
-            const card = document.getElementById('paper-' + paper.key);
-            if (!card) return;
-            const absEl = card.querySelector('.abstract');
-            const title = titleEl ? titleEl.textContent.trim() : paper.title;
-            const summary = summaryEl.textContent.trim()
-              .replace(/\s+/g, ' ') // tidy whitespace
-              .replace(/^Abstract:\s*/i, '');
-            // Update visible title (keeps link)
-            const h3a = card.querySelector('h3 a');
-            if (h3a && title) h3a.textContent = title;
-            // Update abstract
-            if (absEl) {
-              absEl.textContent = summary;
-              absEl.classList.remove('loading');
-            }
-          });
-        })
-        .catch(() => {
-          // If the request fails (e.g., CORS), fall back to a simple message
-          PAPERS.filter(p => p.arxivId).forEach(p => {
-            const card = document.getElementById('paper-' + p.key);
-            if (!card) return;
-            const absEl = card.querySelector('.abstract');
-            if (absEl) {
-              absEl.innerHTML = `View on <a href="${p.url}" target="_blank" rel="noopener">arXiv</a> for the latest abstract.`;
-              absEl.classList.remove('loading');
-            }
-          });
-        });
-    }
+    });
   </script>
 </body>
 </html>
