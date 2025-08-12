@@ -49,7 +49,7 @@
 
     /* Header */
     header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in srgb, var(--paper) 88%, transparent); border-bottom: 1px solid var(--ui); }
-    .hdr { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: var(--content-w); margin: 0 auto; padding: 12px 20px; }
+    .hdr { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: var(--content-w); margin: 0 auto; padding: 12px 20px; }
     .brand { font-weight: 700; letter-spacing: 0.2px; color: var(--forest); }
     nav a { margin-left: 16px; font-weight: 600; color: var(--tx); }
     nav a:hover { color: var(--forest); text-decoration: none; }
@@ -100,7 +100,6 @@
 
   <header>
     <div class="hdr">
-      <div class="brand"><a href="#about" aria-label="Home">Miranda Miao</a></div>
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#research">Research</a>
@@ -143,6 +142,14 @@
         </article>
       </div>
       <p class="fine">More coming soon.</p>
+      <div class="hr" role="presentation"></div>
+    </section>
+
+    <!-- Additional Information -->
+    <section id="additional" aria-labelledby="additional-h">
+      <h2 id="additional-h">Additional Information</h2>
+      <p>In a distant life, I was very honored to be offered the <a href="https://www.chicagobooth.edu/research/fama-miller/who-we-are/phd-fellowships" target="_blank"> Liew Fama-Miller PhD Fellowship </a>. I remain invested in the social sciences and the impact of technology on human lives.</p>
+      <p>I sporadically update a list of my favorite NYC restaurants, which can be found <a href="https://beliapp.co/app/soupersad" target="_blank">here</a>.</p>
       <div class="hr" role="presentation"></div>
     </section>
 
