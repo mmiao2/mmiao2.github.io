@@ -1,0 +1,144 @@
+{
+  "basics": {
+    "name": "Miranda Muqing Miao",
+    "label": "PhD Student",
+    "image": "",
+    "email": "miaom@seas.upenn.edu",
+    "url": "https://mmiao2.github.io",
+    "summary": "PhD student in Computer & Information Science at the University of Pennsylvania, focusing on mechanistic interpretability, LLM calibration, and AI safety.",
+    "location": {
+      "address": "Levine Hall, 3330 Walnut Street",
+      "postalCode": "PA 19104",
+      "city": "Philadelphia",
+      "countryCode": "US",
+      "region": "Pennsylvania"
+    },
+    "profiles": [
+      {
+        "network": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=QO6LJz0AAAAJ"
+      },
+      {
+        "network": "GitHub",
+        "username": "mmiao2",
+        "url": "https://github.com/mmiao2"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://linkedin.com/in/miranda-miao-09289b104"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tesla",
+      "position": "Incoming Engineering Intern",
+      "startDate": "2026-06-01",
+      "summary": "Engineering internship, Summer 2026."
+    },
+    {
+      "name": "EdgePeak Capital",
+      "position": "AI Researcher",
+      "startDate": "2025-06-01",
+      "endDate": "2025-08-01",
+      "summary": "Built Clara, an AI financial agent with near-100% adoption supporting a $25M fundraise. Designed and implemented multi-agent RAG system for financial document analysis."
+    },
+    {
+      "name": "Citigroup",
+      "position": "Senior Data Scientist",
+      "startDate": "2021-02-01",
+      "endDate": "2023-08-01",
+      "summary": "Led quantitative modeling for credit risk and portfolio analytics. Built ML pipelines for real-time risk assessment."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Pennsylvania",
+      "location": "Philadelphia, PA",
+      "url": "https://www.upenn.edu/",
+      "area": "Computer & Information Science",
+      "studyType": "PhD",
+      "startDate": "2026-08-01",
+      "summary": "Co-advised by Lyle Ungar and Michael Kearns. Research on mechanistic interpretability, LLM calibration, and AI safety."
+    },
+    {
+      "institution": "University of Pennsylvania",
+      "location": "Philadelphia, PA",
+      "url": "https://www.upenn.edu/",
+      "area": "Computer & Information Science",
+      "studyType": "Master of Science in Engineering",
+      "startDate": "2024-08-01",
+      "endDate": "2026-05-01",
+      "score": "3.96/4.00"
+    },
+    {
+      "institution": "Wellesley College",
+      "location": "Wellesley, MA",
+      "url": "https://www.wellesley.edu/",
+      "area": "Data Science and Economics",
+      "studyType": "Bachelor of Arts",
+      "summary": "Magna Cum Laude, Departmental Honors in Economics, Durant Scholar. Study abroad: University of Cambridge (Mathematics)."
+    }
+  ],
+  "awards": [
+    {
+      "title": "Durant Scholar",
+      "awarder": "Wellesley College",
+      "summary": "Awarded for academic excellence."
+    },
+    {
+      "title": "Liew Fama-Miller PhD Fellowship (Offered)",
+      "awarder": "University of Chicago Booth School of Business",
+      "summary": "Offered the prestigious Fama-Miller PhD Fellowship."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Research Areas",
+      "icon": "fa-solid fa-brain",
+      "keywords": [
+        "Mechanistic Interpretability",
+        "LLM Calibration",
+        "AI Safety",
+        "Activation Steering",
+        "Multilingual NLP"
+      ]
+    },
+    {
+      "name": "Technical Skills",
+      "icon": "fa-solid fa-code",
+      "keywords": [
+        "Python",
+        "PyTorch",
+        "Transformers",
+        "TransformerLens",
+        "HuggingFace",
+        "CUDA"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "Mandarin Chinese",
+      "fluency": "Native speaker",
+      "icon": ""
+    }
+  ],
+  "interests": [
+    {
+      "name": "AI Safety & Alignment",
+      "icon": "fa-solid fa-shield-halved",
+      "keywords": [
+        "Mechanistic Interpretability",
+        "LLM Calibration",
+        "Truthfulness",
+        "Activation Steering"
+      ]
+    }
+  ]
+}
