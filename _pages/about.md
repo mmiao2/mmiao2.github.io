@@ -17,7 +17,7 @@ profile:
 
 news: true
 selected_papers: true
-social: true
+social: false
 ---
 
 I am a PhD student in Computer & Information Science at the University of Pennsylvania, co-advised by [Lyle Ungar](https://www.cis.upenn.edu/~ungar/), [Michael Kearns](https://www.cis.upenn.edu/~mkearns/), and [Aaron Roth](https://www.cis.upenn.edu/~aaroth/).
@@ -29,4 +29,4 @@ My recent work includes:
 - **Confidence-Faithfulness Gap** (COLM 2026 under review): showing that calibration and confidence signals are linearly encoded but orthogonal, and introducing adaptive steering to align them
 - **Hallucination & Monofacts** (PNAS 2025): the first empirical validation of the theoretical link between LLM hallucination and training data monofact rates
 
-Before my PhD, I worked as a Senior Data Scientist at Citigroup and as an AI Researcher at EdgePeak Capital, where I built Clara, an AI financial agent with near-100% adoption supporting a $25M fundraise. I hold a BA from Wellesley College (Magna Cum Laude, Durant Scholar) and studied mathematics at the University of Cambridge.
+I hold a BA from Wellesley College (Magna Cum Laude, Durant Scholar) and studied mathematics at the University of Cambridge. I also hold a master in computer information science from the University of Pennsylvania.
