@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Incoming **Engineering Intern** at **Tesla**, Summer 2026.
+Incoming intern at **Tesla**.

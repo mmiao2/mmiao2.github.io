@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2026-03-01
+date: 2026-01-15
 inline: true
 related_posts: false
 ---
 
-**CORAL** paper submitted to **ICML 2026** receives strong reviews (4.33 avg rating, Likely Accept).
+**CORAL** submitted to **ICML 2026**.

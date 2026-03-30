@@ -7,7 +7,7 @@ description: >
   LLM calibration, and AI safety. I build methods that peer inside
   language models to understand and steer their internal representations
   of confidence, correctness, and faithfulness.
-nav: true
+nav: false
 nav_order: 3
 display_categories: [Interpretability & Steering, Calibration & Truthfulness, Multilingual NLP, Ongoing]
 horizontal: false
