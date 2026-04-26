@@ -25,7 +25,7 @@ I am a PhD student in Computer & Information Science at the University of Pennsy
 My research focuses on **mechanistic interpretability**, **LLM calibration**, and **AI safety**. I study how large language models internally represent and compute confidence, correctness, and faithfulness, with the goal of building steering methods that improve reliability without retraining.
 
 My recent work includes:
-- **CORAL** (ICML 2026 under review): extracting distributed correctness signals from frozen LLM residual stream activations for inference-time steering
+- **CORAL** (accepted at ICML 2026): extracting distributed correctness signals from frozen LLM residual stream activations for inference-time steering
 - **Confidence-Faithfulness Gap** (COLM 2026 under review): showing that calibration and confidence signals are linearly encoded but orthogonal, and introducing adaptive steering to align them
 - **Hallucination & Monofacts** (PNAS 2025): the first empirical validation of the theoretical link between LLM hallucination and training data monofact rates
 
