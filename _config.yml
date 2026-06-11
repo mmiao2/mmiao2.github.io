@@ -8,7 +8,7 @@ middle_name: Muqing
 last_name: Miao
 email: miaom@seas.upenn.edu
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  PhD student in Computer & Information Science at the University of Pennsylvania.
+  Masters student in Computer & Information Science at the University of Pennsylvania.
   Research on mechanistic interpretability, LLM calibration, and AI safety.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
