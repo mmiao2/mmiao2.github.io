@@ -3,7 +3,7 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-  Masters Student, <a href="https://www.cis.upenn.edu/">Computer & Information Science</a>,
+  PhD Student, <a href="https://www.cis.upenn.edu/">Computer & Information Science</a>,
   <a href="https://www.upenn.edu/">University of Pennsylvania</a>
 
 profile:
@@ -20,7 +20,7 @@ selected_papers: true
 social: false
 ---
 
-I am a masters student in Computer & Information Science at the University of Pennsylvania, co-advised by [Michael Kearns](https://www.cis.upenn.edu/~mkearns/), [Aaron Roth](https://www.cis.upenn.edu/~aaroth/), and [Lyle Ungar](https://www.cis.upenn.edu/~ungar/).
+I am a PhD student in Computer & Information Science at the University of Pennsylvania, co-advised by [Michael Kearns](https://www.cis.upenn.edu/~mkearns/), [Aaron Roth](https://www.cis.upenn.edu/~aaroth/), and [Lyle Ungar](https://www.cis.upenn.edu/~ungar/).
 
 My research focuses on **mechanistic interpretability**, **LLM calibration**, and **AI safety**. I study how large language models internally represent and compute confidence, correctness, and faithfulness, with the goal of building steering methods that improve reliability without retraining.
 
