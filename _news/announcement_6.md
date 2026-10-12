@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-**CORAL** received a score of **5** at **ICML 2026** and has been accepted!
+**CORAL** received a score of **5** at **ICML 2026** and has been accepted.
