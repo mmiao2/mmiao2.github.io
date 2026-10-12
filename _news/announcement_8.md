@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Recognized as an **Outstanding Reviewer** at an **ICML 2026** workshop.
+Recognized as an **Outstanding Reviewer** at **ICML 2026** workshop.
