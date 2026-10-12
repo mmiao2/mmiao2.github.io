@@ -22,7 +22,7 @@ social: false
 
 I am a PhD student in Computer & Information Science at the University of Pennsylvania, co-advised by [Michael Kearns](https://www.cis.upenn.edu/~mkearns/), [Aaron Roth](https://www.cis.upenn.edu/~aaroth/), and [Lyle Ungar](https://www.cis.upenn.edu/~ungar/).
 
-My research interests span **mechanistic interpretability**, **LLM calibration**, and **AI safety**. I am currently working on **multi-agent systems alignment**.
+My research interests span **mechanistic interpretability**, **LLM calibration**, and **AI safety**. I am currently working on the **alignment of multi-agent systems**.
 
 My recent work includes:
 - **CORAL** (accepted at ICML 2026): extracting distributed correctness signals from frozen LLM residual stream activations for inference-time steering
