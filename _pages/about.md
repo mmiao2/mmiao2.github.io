@@ -26,7 +26,7 @@ My research interests span **mechanistic interpretability**, **LLM calibration**
 
 My recent work includes:
 - **CORAL** (accepted at ICML 2026): extracting distributed correctness signals from frozen LLM residual stream activations for inference-time steering
-- **Confidence-Faithfulness Gap** (COLM 2026 under review): showing that calibration and confidence signals are linearly encoded but orthogonal, and introducing adaptive steering to align them
+- **Confidence-Faithfulness Gap**: showing that calibration and confidence signals are linearly encoded but orthogonal, and introducing adaptive steering to align them
 - **Hallucination & Monofacts** (PNAS 2026): the first empirical validation of the theoretical link between LLM hallucination and training data monofact rates
 
 I hold a BA from Wellesley College (Magna Cum Laude, Durant Scholar) and studied mathematics at the University of Cambridge. I also hold an MS in Computer Information Science from the University of Pennsylvania.
